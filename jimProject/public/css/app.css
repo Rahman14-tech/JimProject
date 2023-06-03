@@ -20,12 +20,14 @@
     margin-bottom: 40px;
 }
 .hero .btn-s2 {
-    background-color: #f488f0;
-    border-color: #f488f0;
+    background-color: rgba(0,0,0,0);
+    border-color: #ffffff;
+    color: #fff;
 }
 .hero .btn-s2:hover {
-    background-color: #c14cc2;
-    border-color: #c14cc2;
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
 }
 .hero .btn-s {
     background-color: #6b75ff;
@@ -48,6 +50,8 @@
     width: 100px;
     height: 100px;
     margin-right: 30px;
+    border-radius: 10px;
+
 }
 .feature h3 {
     font-size: 24px;
@@ -62,6 +66,31 @@
 .fas{
     font-size:60px;
 }
-img{
-    border-radius: 10px;
+
+.about-us{
+    margin-top: 5rem;
 }
+
+.about-us h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-us p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .btn-s3{
+    border-color: #000000;
+    color: #000000;
+  }
+
+  .btn-s3:hover{
+    background-color: #000000;
+    color: #FFFF
+  }
