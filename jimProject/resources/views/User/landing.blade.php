@@ -13,8 +13,7 @@
         <div class="container">
             <h1>Welcome to Our Gym</h1>
             <p>Get in shape and stay healthy</p>
-            <a href="{{ route('register') }}" class="btn btn-s2 btn-lg mt-3">Register</a>
-            <a href="{{ route('login') }}" class="btn btn-s btn-lg mt-3">Login</a> <!-- Added login button -->
+            <a href="{{ route('login') }}" class="btn btn-s2 btn-lg mt-3">Get Started</a>
         </div>
     </section>
 
@@ -51,7 +50,24 @@
             </div>
         </div>
 
+        <div class="container mt-5">
+            <div class="row about-us">
+                <div class="col text-center">
+                    <img src="{{ asset('img/gym3.jpg') }}" style="width:70%;" alt="">
+                </div>
+                <div class="col ">
+                    <div class="text-center mt-5">
+                        <h3><b>About Us</b></h3>
+                        <p>Welcome to our gym, where fitness and wellness come together. We are dedicated to helping individuals achieve their health goals and lead an active lifestyle.</p>
+                        <p>At our gym, we offer state-of-the-art facilities equipped with the latest fitness equipment, spacious workout areas, and a supportive environment.</p>
+                        <p>Our team of experienced trainers is committed to providing personalized training programs tailored to each individual's needs and fitness levels. Whether you are a beginner or an experienced athlete, we have something for everyone.</p>
+                    </div>
+                    <a href="{{ route('login') }}" class="btn btn-s3 btn-lg mt-3">Get Started</a>
+                </div>
+            </div>
+        </div>
     </section>
+    
 
     
 </html>
