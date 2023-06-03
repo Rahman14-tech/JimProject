@@ -13,8 +13,8 @@
         <div class="container">
             <h1>Welcome to Our Gym</h1>
             <p>Get in shape and stay healthy</p>
-            <a href="#" class="btn btn-primary btn-lg mt-3">Register</a>
-            <a href="#" class="btn btn-s btn-lg mt-3">Login</a> <!-- Added login button -->
+            <a href="{{ route('register') }}" class="btn btn-s2 btn-lg mt-3">Register</a>
+            <a href="{{ route('login') }}" class="btn btn-s btn-lg mt-3">Login</a> <!-- Added login button -->
         </div>
     </section>
 
