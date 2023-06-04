@@ -1,0 +1,27 @@
+.c-item {
+  height:480px;
+  /* height: 100vh; */
+}
+
+.c-item h5 {
+  font-size: 35px; 
+}
+
+.c-item p {
+  font-size: 15px;
+}
+
+.tubuh{
+  height:200vh;
+  background: rgb(71, 71, 71);
+}
+
+.c-img{
+  object-fit: cover;
+  height: 100%;
+}
+
+.nav-item a{
+  color: #ffff;
+  font-style: bold;
+}
