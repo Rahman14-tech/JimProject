@@ -94,3 +94,12 @@
     background-color: #000000;
     color: #FFFF
   }
+
+  footer{
+    color: #ffff;
+  }
+  .blockquote-footer {
+    font-size: large;
+    font-style: italic;
+    color: #999;
+  }

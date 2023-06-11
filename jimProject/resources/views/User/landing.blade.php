@@ -67,6 +67,15 @@
             </div>
         </div>
     </section>
+
+    
+    <footer class="footer text-center bg-dark p-5 mt-5">
+        <blockquote class="blockquote">
+          <h3 class="mb-4">Obstacles can't stop you. Problems can't stop you. People can't stop you. Only you can stop you.</h3>
+          <footer class="blockquote-footer">Jeffrey Gitomer</footer>
+        </blockquote>
+      </footer>
+      
     
 
     
