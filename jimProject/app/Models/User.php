@@ -26,7 +26,8 @@ class User extends Authenticatable
         'password',
         'confirmation',
         'age',
-        'LevelConsideration'
+        'LevelConsideration',
+        'isAdmin'
     ];
 
     /**

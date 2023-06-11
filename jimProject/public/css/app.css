@@ -84,7 +84,9 @@
 #registerPart{
     background-image: url('../img/GymbackReg.jpg');
 }
-
+#loginPart {
+    background-image: url('../img/darkJim.jpg');
+}
 .about-us{
     margin-top: 5rem;
 }

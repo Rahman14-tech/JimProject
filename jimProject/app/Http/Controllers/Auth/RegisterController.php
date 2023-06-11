@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,7 +54,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', $data['password'] == $data['confirmation']],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
             'age' => ['required', 'integer'],
             'LevelConsideration' => ['required', in_array($data['LevelConsideration'], $tempConsideration)]
         ]);
@@ -67,11 +69,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $difficultyId = DB::table('difficulties')->where('Level', $data['LevelConsideration'])->get();
+        $theId = 1;
+        foreach ($difficultyId as $diffId) {
+            $$theId = $diffId->id;
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'LevelConsideration' => $data['LevelConsideration'],
+            'LevelConsideration' => $theId,
             'age' => $data['age'],
             'isAdmin' => false
         ]);
