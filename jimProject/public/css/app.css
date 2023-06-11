@@ -98,3 +98,8 @@
   footer{
     color: #ffff;
   }
+  .blockquote-footer {
+    font-size: large;
+    font-style: italic;
+    color: #999;
+  }
