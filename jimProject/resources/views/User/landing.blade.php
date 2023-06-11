@@ -67,6 +67,20 @@
             </div>
         </div>
     </section>
+
+    
+    <footer class="footer text-center bg-dark p-5">
+        <div class="row">
+            <h3>
+                <b>
+                    "Obstacles can't stop you. Problems can't stop you. People can't stop you. Only you can stop you."
+                </b>
+            </h3>
+        </div>
+        <div class="row">
+            <h3> - Jeffrey Gitomer - </h3>
+        </div>
+    </footer>
     
 
     
