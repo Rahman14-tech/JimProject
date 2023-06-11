@@ -45,32 +45,49 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-    {{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ asset('img/gym2.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption top-50">
-                <h1 class="">Kocak</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      
+      <section class="categories row m-5">
+        <div class="col-md-4 mb-3 mb-lg-0">
+          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-1-content px-5">
+              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
+              <p class="hover-1-description font-weight-light mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+            </p>
             </div>
+          </div>
         </div>
-        <div class="carousel-item">
-        <img src="{{ asset('img/gym1.jpg') }}" class="d-block w-100" alt="...">
+        
+        <div class="col-md-4 mb-3 mb-lg-0">
+          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-1-content px-5">
+              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
+              <p class="hover-1-description font-weight-light mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+            </p>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item">
-        <img src="{{ asset('img/dumbel.jpg') }}" class="d-block w-100" alt="...">
+
+        <div class="col-md-4 mb-3 mb-lg-0">
+          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
+            <div class="hover-overlay"></div>
+            <div class="hover-1-content px-5">
+              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
+              <p class="hover-1-description font-weight-light mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
+            </p>
+            </div>
+          </div>
         </div>
-    </div>
-    <button class="carousel-control-prev mb-3" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-    </div> --}}
+
+      </section>
+
 
 </div>
 @endsection
