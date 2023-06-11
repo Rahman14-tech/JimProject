@@ -62,6 +62,21 @@
 .fas{
     font-size:60px;
 }
-img{
+.landingImage{
     border-radius: 10px;
+}
+#registrationImage{
+    height: 100rem
+}
+#registerCard{
+    margin-left: 16rem;
+    margin-top: 2rem;
+}
+
+#thirdRegcolumn{
+    padding: 3rem;
+}
+
+#registerPart{
+    background-image: url('../img/GymbackReg.jpg');
 }
