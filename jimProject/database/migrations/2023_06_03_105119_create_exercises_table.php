@@ -37,7 +37,7 @@ return new class extends Migration {
                 ->on('difficulties')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
-            $table->string("Instruction");
+            $table->text("Instruction");
             $table->string("VideoUrl");
             $table->timestamps();
         });
