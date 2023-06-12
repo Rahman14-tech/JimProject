@@ -58,7 +58,7 @@
 
 /* DEMO 1 ============================== */
 .hover-1 img {
-  width: 105%;
+  width: 106%;
   position: absolute;
   top: 0;
   left: -5%;
@@ -71,6 +71,7 @@
   left: 0;
   z-index: 90;
   transition: all 0.4s;
+  color:rgb(255, 255, 255);
 }
 
 .hover-1 .hover-overlay {
@@ -98,4 +99,59 @@
 
 .hover-1:hover .hover-overlay {
   opacity: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.benefits {
+  flex: 1;
+  padding: 20px;
+  color:#ffff;
+}
+
+.image-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mike{
+  margin-top: 8rem;
+}
+
+.benefits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefits h2{
+  margin-bottom: 1rem;
+  font-size: 50px;
+}
+.benefits ul {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.no-bullets p{
+  list-style-type: none;
+  text-align: left; 
+  font-size: 20px;
+}
+
+.content{
+  margin-left: 50px;
 }
