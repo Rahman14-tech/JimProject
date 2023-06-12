@@ -69,10 +69,10 @@
     </section>
 
     
-    <footer class="footer text-center bg-dark p-4 mt-5">
-        <blockquote class="blockquote mt-3">
-          <h3>Obstacles can't stop you. Problems can't stop you. People can't stop you. Only you can stop you.</h3>
-          <footer class="blockquote-footer m-2">Jeffrey Gitomer</footer>
+    <footer class="footer text-center bg-dark p-5 mt-5">
+        <blockquote class="blockquote">
+          <h3 class="mb-4">Obstacles can't stop you. Problems can't stop you. People can't stop you. Only you can stop you.</h3>
+          <footer class="blockquote-footer">Jeffrey Gitomer</footer>
         </blockquote>
       </footer>
       
