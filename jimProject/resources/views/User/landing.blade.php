@@ -15,7 +15,7 @@
         <div class="container">
             <h1>Welcome to Our Gym</h1>
             <p>Get in shape and stay healthy</p>
-            <a href="{{ route('login') }}" class="btn btn-s2 btn-lg mt-3">Get Started</a>
+            <a href="{{ route('register') }}" class="btn btn-s2 btn-lg mt-3">Get Started</a>
         </div>
     </section>
 
@@ -71,7 +71,7 @@
                             tailored to each individual's needs and fitness levels. Whether you are a beginner or an
                             experienced athlete, we have something for everyone.</p>
                     </div>
-                    <a href="{{ route('login') }}" class="btn btn-s3 btn-lg mt-3">Get Started</a>
+                    <a href="{{ route('register') }}" class="btn btn-s3 btn-lg mt-3">Get Started</a>
                 </div>
             </div>
         </div>

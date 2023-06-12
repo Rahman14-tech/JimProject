@@ -92,6 +92,9 @@
                                             <button type="Submit"
                                                 class="btn btn-outline-dark"style="margin-top:2rem;">Register</button>
                                         </div>
+                                        <div>
+                                            <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+                                        </div>
                                     </form>
 
                                 </div>

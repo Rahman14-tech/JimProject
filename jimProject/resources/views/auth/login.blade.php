@@ -52,6 +52,9 @@
                                             <button type="Submit"
                                                 class="btn btn-outline-dark"style="margin-top:2rem;">Login</button>
                                         </div>
+                                        <div>
+                                            <p>Doesn't have an account ? <a href="{{ route('register') }}">Register Here</a></p>
+                                        </div>
                                     </form>
 
                                 </div>
