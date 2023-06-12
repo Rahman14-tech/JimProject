@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,15 +18,17 @@ class AdminAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        if(auth()->guard('admin')->attempt(['email' => $request->input('email'),  'password' => $request->input('password')])){
+        if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]))
+        {
             $user = auth()->guard('admin')->user();
-            if($user->isAdmin == 1){
-                return redirect()->route('admin.welcome')->with('success','You are Logged in sucessfully.');
-            }
-        }else {
-            return back()->with('error','Whoops! invalid email and password.');
+
+            Session::put('success','You are Login successfully!!');
+            return redirect()->route('dashboard');
+
+        } else {
+            return back()->with('error','your username and password are wrong.');
         }
+
     }
 
     public function adminLogout(Request $request)

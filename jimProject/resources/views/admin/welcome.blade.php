@@ -1,4 +1,4 @@
-@extends('layouts.Userlay')
+@extends('admin.layouts.Adminlay')
 
 @section('content')
 <div class="tubuh">

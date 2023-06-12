@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ExerciseController;
-use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,16 +18,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //Admin Routing
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
-    Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+Route::get('admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+Route::get('admin/logout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
 
-    Route::group(['middleware' => 'adminauth'], function () {
-        Route::get('/admin', function () {
-            return view('admin.welcome');
-        })->name('adminDashboard');
-
-    });
+Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
+	// Admin Dashboard
+	Route::get('dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
 });
 
 Route::get('/', function () {
