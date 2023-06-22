@@ -1,6 +1,6 @@
 @extends('admin.layouts.Adminlay')
 
-@section('content')
+@section('body')
 <div class="tubuh">
     @if(session('message'))
     <div class="alert alert-success">

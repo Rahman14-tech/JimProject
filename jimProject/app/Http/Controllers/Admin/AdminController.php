@@ -12,7 +12,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.welcome');
+        return view('admin.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        // return view('admin.otot');
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.edit');
     }
 
     /**
