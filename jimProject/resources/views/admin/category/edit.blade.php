@@ -2,6 +2,6 @@
 
 @section('body')
 <div>
-    <h1>kocak</h1>
+    <h1>EDIT CUY</h1>
 </div>
 @endsection
