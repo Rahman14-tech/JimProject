@@ -36,6 +36,7 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'remember_token',
     ];
+
     /**
      * The attributes that should be cast.
      *
@@ -45,7 +46,6 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
