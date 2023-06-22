@@ -1,68 +1,165 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin {{ isset($title)?'| '.$title:'' }}</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/fontawesome-free/css/all.min.css") }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css") }}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css") }}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/jqvmap/jqvmap.min.css") }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/dist/css/adminlte.min.css") }}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/daterangepicker/daterangepicker.css") }}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ asset("adminLTE/plugins/summernote/summernote-bs4.min.css") }}">
+  <link rel="stylesheet" href="app.css">
+  @yield('head')
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
-
-    <!-- Scripts -->
-    @vite(['resources/js/app.js'])
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-            <div class="container-fluid p-3 mx-3">
-              <a class="navbar-brand" href="#"><b>GYMSKUY</b></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </div>
-                <div class="ms-auto">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                               Admin {{ auth()->guard('web')->user()->name }}
-                            </a>
+<body class="hold-transition sidebar-mini layout-fixed">
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('login') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();" style="color: black">
-                                    {{ __('Logout') }}
-                                </a>
+<div class="wrapper">
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{ asset("adminLTE/dist/img/AdminLTELogo.png") }}" alt="AdminLTELogo" height="60" width="60">
+  </div>
 
-                        </li>
-                    </ul>
-                </div>
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Users</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Portofolios</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fa fa-user-circle fa-lg"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{{ asset("adminLTE/dist/img/user1-128x128.jpg") }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
-          </nav>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="{{ route('logout') }}" class="dropdown-item">
+           Logout
+          </a>
 
+    </ul>
+  </nav>
+  <!-- /.navbar -->
 
-        <main>
-            @yield('content')
-        </main>
+  @include('admin.layouts.sidebar')
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper pt-3">
+    <!-- /.content-header -->
+    @yield('content-header')
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid" style="height:65%;">
+        @yield('body')
+        
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer mt-5">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.1.0
     </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+{{-- @include('sweetalert::alert') --}}
+
+<!-- jQuery -->
+<script src="{{ asset("adminLTE/plugins/jquery/jquery.min.js") }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset("adminLTE/plugins/jquery-ui/jquery-ui.min.js") }}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset("adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+<!-- Sparkline -->
+<script src="{{ asset("adminLTE/plugins/sparklines/sparkline.js") }}"></script>
+<!-- JQVMap -->
+<script src="{{ asset("adminLTE/plugins/jqvmap/jquery.vmap.min.js") }}"></script>
+<script src="{{ asset("adminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js") }}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{ asset("adminLTE/plugins/jquery-knob/jquery.knob.min.js") }}"></script>
+<!-- daterangepicker -->
+<script src="{{ asset("adminLTE/plugins/moment/moment.min.js") }}"></script>
+<script src="{{ asset("adminLTE/plugins/daterangepicker/daterangepicker.js") }}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset("adminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js") }}"></script>
+<!-- Summernote -->
+<script src="{{ asset("adminLTE/plugins/summernote/summernote-bs4.min.js") }}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ asset("adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js") }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset("adminLTE/dist/js/adminlte.js") }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset("adminLTE/dist/js/demo.js") }}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset("adminLTE/dist/js/pages/dashboard.js") }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+@yield('scripts')
+
 </body>
 </html>
