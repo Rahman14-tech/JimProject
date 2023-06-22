@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Part;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('User.home')->with('message','Succes!');
+        return view('User.home')->with('message', 'Succes!');
+    }
+    public function selection()
+    {
+        $allParts = Part::all();
+        return view('User.selection', [
+            'Parts' => $allParts,
+        ]);
     }
 }

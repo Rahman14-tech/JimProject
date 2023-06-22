@@ -11,6 +11,6 @@ class Tool extends Model
     use HasFactory;
     public function Exercise(): HasMany
     {
-        return $this->hasMany(Difficulty::class, 'Tool', 'id');
+        return $this->hasMany(Exercise::class, 'Tool', 'id');
     }
 }

@@ -11,6 +11,6 @@ class Part extends Model
     use HasFactory;
     public function Exercise(): HasMany
     {
-        return $this->hasMany(Difficulty::class, 'Part', 'id');
+        return $this->hasMany(Exercise::class, 'Part', 'id');
     }
 }

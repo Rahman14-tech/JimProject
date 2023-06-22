@@ -23,7 +23,6 @@ return new class extends Migration {
                 ->on('difficulties')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
-            $table->boolean("isAdmin");
             $table->rememberToken();
             $table->timestamps();
         });

@@ -4,7 +4,7 @@
 }
 
 .c-item h5 {
-  font-size: 35px; 
+  font-size: 35px;
 }
 
 .c-item p {
@@ -12,10 +12,11 @@
 }
 
 .tubuh{
-  height:200vh;
   background: rgb(71, 71, 71);
 }
-
+.tubuhHitam{
+    background: black;
+}
 .c-img{
   object-fit: cover;
   height: 100%;
@@ -98,4 +99,39 @@
 
 .hover-1:hover .hover-overlay {
   opacity: 0;
+}
+.contentExercise {
+    margin-top: 5rem;
+}
+@media only screen and (max-width: 600px) {
+    #the_vid {
+        float: left;
+        width: 250px;
+        height: 23em;
+    }
+
+    #view_image {
+        width: 300px;
+        height: 220px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #the_vid {
+        float: left;
+        width: 580px;
+        height: 23em;
+    }
+
+    #view_image {
+        width: 550px;
+        height: 350px;
+    }
+}
+.whiteText{
+    color: white;
+}
+
+.MarginTop{
+    margin-top: 10rem;
 }

@@ -1,18 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Tymon\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Notifications\Notifiable;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Difficulty;
 
-class User extends Authenticatable implements JWTSubject
-{
-    use Notifiable;
 
-    // Rest omitted for brevity
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +29,7 @@ class User extends Authenticatable implements JWTSubject
         'LevelConsideration',
         'isAdmin'
     ];
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -36,6 +39,7 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'remember_token',
     ];
+
     /**
      * The attributes that should be cast.
      *
@@ -46,25 +50,6 @@ class User extends Authenticatable implements JWTSubject
         'password' => 'hashed',
     ];
 
-    /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
     public function LevelConsideration(): BelongsTo
     {
         return $this->belongsTo(Difficulty::class);

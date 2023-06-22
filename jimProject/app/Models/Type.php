@@ -11,6 +11,6 @@ class Type extends Model
     use HasFactory;
     public function Exercise(): HasMany
     {
-        return $this->hasMany(Difficulty::class, 'Type', 'id');
+        return $this->hasMany(Exercise::class, 'Type', 'id');
     }
 }

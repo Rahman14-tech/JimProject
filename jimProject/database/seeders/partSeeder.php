@@ -13,10 +13,11 @@ class partSeeder extends Seeder
      */
     public function run(): void
     {
-        $partsArray = array("Biceps", "Calves", "Triceps");
+        $partsArray = array("Biceps", "Glutes", "Triceps", "Traps", "Abs");
         foreach ($partsArray as $part) {
             DB::table('parts')->insert([
                 'Name' => $part,
+                'image_url' => $part . ".jpg",
             ]);
         }
     }

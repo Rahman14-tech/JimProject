@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exercise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExerciseController extends Controller
 {
@@ -11,7 +13,7 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        //
+        return view('Exercise.allExercise');
     }
 
     /**
@@ -35,7 +37,8 @@ class ExerciseController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $Datum = Exercise::find($id)::with('type', 'difficulty', 'tool', 'part')->first();
+        return view('Exercise.ExerciseDetail', compact('Datum'));
     }
 
     /**
@@ -43,7 +46,7 @@ class ExerciseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**

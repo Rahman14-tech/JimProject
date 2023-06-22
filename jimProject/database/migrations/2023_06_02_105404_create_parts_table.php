@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('parts', function (Blueprint $table) {
             $table->id();
             $table->string("Name");
+            $table->string('image_url');
             $table->timestamps();
         });
     }

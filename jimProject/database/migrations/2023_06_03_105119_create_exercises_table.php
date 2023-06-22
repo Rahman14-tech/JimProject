@@ -39,6 +39,7 @@ return new class extends Migration {
                 ->onDelete('restrict');
             $table->text("Instruction");
             $table->string("VideoUrl");
+            $table->string("ThumbnailImage");
             $table->timestamps();
         });
 
