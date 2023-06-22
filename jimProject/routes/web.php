@@ -18,14 +18,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //Admin Routing
-Route::get('admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
-Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
-Route::get('admin/logout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
+// Route::get('admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+// Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+// Route::get('admin/logout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
-    // Admin Dashboard
-    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-});
+// Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
+//     // Admin Dashboard
+//     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+// });
+
+Route::get('admin/home', [AdminController::class, 'index'])->name('admin.home')->middleware('adminauth');
 
 Route::get('/', function () {
     return view('User.landing');

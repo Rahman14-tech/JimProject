@@ -17,13 +17,19 @@ class AdminAuthenticated
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::guard('admin')->user()) {
+        // if (Auth::guard('admin')->user()) {
+        //     return $next($request);
+        // }
+        // if ($request->ajax() || $request->wantsJson()) {
+        //     return response('Unauthorized.', 401);
+        // } else {
+        //     return redirect(route('adminLogin'));
+        // }
+
+        if(auth()->user()->isAdmin == 1){
             return $next($request);
         }
-        if ($request->ajax() || $request->wantsJson()) {
-            return response('Unauthorized.', 401);
-        } else {
-            return redirect(route('adminLogin'));
-        }
+
+        return redirect('/')->with('error',"You don't have admin access.");
     }
 }
