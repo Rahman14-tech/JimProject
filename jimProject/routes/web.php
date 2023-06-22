@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ExerciseController;
-use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,8 +26,11 @@ use Illuminate\Support\Facades\Auth;
 //     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // });
 
-Route::get('admin/home', [AdminController::class, 'index'])->name('admin.home')->middleware('adminauth');
+Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
+    Route::get('/home', [AdminController::class,'index'])->name('admin.home');
+});
 
+//user routing
 Route::get('/', function () {
     return view('User.landing');
 });
