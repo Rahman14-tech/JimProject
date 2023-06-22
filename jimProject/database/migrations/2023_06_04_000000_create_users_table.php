@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('password');
             $table->integer("age");
             $table->unsignedBigInteger('LevelConsideration')->nullable();
+            $table->boolean('isAdmin')->default(false)->nullable();
             $table->foreign('LevelConsideration')
                 ->references('id')
                 ->on('difficulties')
