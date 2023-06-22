@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
     Route::get('/home', [AdminController::class,'index'])->name('admin.home');
+    Route::get('/edit', [AdminController::class,'index'])->name('admin.edit');
 });
 
 //user routing
