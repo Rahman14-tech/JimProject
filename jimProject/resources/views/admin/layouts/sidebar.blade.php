@@ -40,7 +40,7 @@ $current_route = request()->route()->getName();
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
         <li class="nav-item">
-            <a href="#" class="nav-link
+            <a href="{{ route('admin.home') }}" class="nav-link
             {{ $current_route == 'dashboard' ? 'active':''}}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -49,45 +49,26 @@ $current_route = request()->route()->getName();
             </a>
         </li>
         
-        <li class="nav-item {{ $current_route == 'users.index' ? 'menu-open':''}}">
-          <a href="#" class="nav-link {{ $current_route == 'users.index' ? 'active':''}}">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              User Management
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="#" class="nav-link
-              {{ $current_route == 'users.index' ? 'active':''}}">
-              <i class="fa fa-user mx-2"></i>
-              <p>Users</p>
-            </a>
-          </li>
-        </ul>
-      </li>
       
       <li class="nav-item">
-          <a href="#" class="nav-link
+          <a href="{{ route('admin.add') }}" class="nav-link
           {{ $current_route == 'portofolios.index' ? 'active':''}}">
               <i class="nav-icon fas fa-briefcase"></i>
               <p>
-                  Portofolios
+                  Create
               </p>
           </a>
       </li>
 
       <li class="nav-item">
-          <a href="#" class="nav-link
-          {{ $current_route == 'category.index' ? 'active':''}}">
-              <i class="nav-icon fas fa-bars"></i>
+          <a href="{{ route('admin.edit') }}" class="nav-link
+          {{ $current_route == 'portofolios.index' ? 'active':''}}">
+              <i class="nav-icon fas fa-briefcase"></i>
               <p>
-                  Category
+                  Edit
               </p>
           </a>
       </li>
-
 
     </ul>
   </nav>
