@@ -80,7 +80,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'LevelConsideration' => $theId,
             'age' => $data['age'],
-            'isAdmin' => false
         ]);
     }
 }
