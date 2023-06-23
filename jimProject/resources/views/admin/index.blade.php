@@ -1,93 +1,67 @@
 @extends('admin.layouts.Adminlay')
 
 @section('body')
-<div class="tubuh">
-    @if(session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
+<div class="content">
+  
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">  
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Exercises</h5>
+  
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
+  
+                <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
+                <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
+                <table class="table table-hover table-bordered datatables text-center">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Part</th>
+                      <th>Tool</th>
+                      <th>Difficulty</th>
+                      <th>Instruction</th>
+                      <th>URL</th>
+                      <th>Thumbnail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{-- @forelse ($categories as $index => $category)
+                      <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $category->name }}</td>
+                        <td>
+                          
+                          <form class="m-3" id="delete-category-{{ $category->id }}" action="{{ route('categories.destroy', $category->id) }}" method="post">
+                            <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                            <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-category-{{ $category->id }}')">Delete</button>
+                            @csrf
+                            @method('delete')
+                          </form>
+                        </td>
+                      </tr>
+                    @empty
+                      <tr>
+                        <td colspan="3" align="center">No Data</td>
+                      </tr>
+                    @endforelse --}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
-    @endif
-    <div id="carouselExampleDark" class="carousel carousel-light slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item c-item active" data-bs-interval="10000">
-            <img src="{{ asset('img/gym4.jpg') }}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption top-50 mb-5">
-              <h5>ACU CUKA K4M0E</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item c-item" data-bs-interval="2000">
-            <img src="{{ asset('img/gym5.jpg') }}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption top-50 ">
-              <h5>ACU RINDYU KAMOE</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item c-item">
-            <img src="{{ asset('img/gym6.jpg') }}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption top-50 ">
-              <h5>ATU CAYANG K4M0E</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <section class="categories row m-5">
-        <div class="col-md-4 mb-3 mb-lg-0">
-          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
-            <div class="hover-overlay"></div>
-            <div class="hover-1-content px-5">
-              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
-              <p class="hover-1-description font-weight-light mb-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-            </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-lg-0">
-          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
-            <div class="hover-overlay"></div>
-            <div class="hover-1-content px-5">
-              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
-              <p class="hover-1-description font-weight-light mb-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-            </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-lg-0">
-          <div class="hover hover-1 text-white rounded"><img src="{{ asset('img/bang maldikin.jpg') }}" alt="">
-            <div class="hover-overlay"></div>
-            <div class="hover-1-content px-5">
-              <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span class="font-weight-light">Image </span>Caption</h3>
-              <p class="hover-1-description font-weight-light mb-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-                dolor sit amet, consectetur adipisicing elit sed diam non pro id urna par iac ullamcorper lore vest id met nulla par.
-            </p>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-
-</div>
-@endsection
+  </div>
+  <!-- /.content-wrapper -->
+  @endsection
