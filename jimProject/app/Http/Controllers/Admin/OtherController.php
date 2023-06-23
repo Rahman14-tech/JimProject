@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class OtherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.index');
+        return view('admin.other');
     }
 
     /**
@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.exercises.create');
+        return view('admin.other.type.create');
     }
 
     /**
@@ -42,9 +42,9 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(string $id)
     {
-        // return view('admin.exercises.edit');
+        // return view('admin.other.type.edit');
     }
 
     /**

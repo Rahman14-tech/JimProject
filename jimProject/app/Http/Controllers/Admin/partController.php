@@ -5,22 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class partController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('admin.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('admin.exercises.create');
+        return view('admin.other.part.create'); 
     }
 
     /**
@@ -42,9 +31,9 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(string $id)
     {
-        // return view('admin.exercises.edit');
+        //
     }
 
     /**
