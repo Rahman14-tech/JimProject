@@ -10,6 +10,7 @@ class partController extends Controller
     public function create()
     {
         return view('admin.other.part.create'); 
+        // return view('admin.other.part.edit'); 
     }
 
     /**

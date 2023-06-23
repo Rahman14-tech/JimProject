@@ -78,7 +78,6 @@
                         <div>
                             <h5 class="card-title mx-3">Difficulties</h5>
                             <a href="{{ route('diff.create') }}" class="btn btn-primary mb-2">Add</a>
-                            <a href="#" class="btn btn-warning mb-2">Edit</a>
                         </div>
                       
                       <table class="table table-hover table-bordered datatables text-center">

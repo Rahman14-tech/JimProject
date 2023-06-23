@@ -44,7 +44,7 @@ class AdminController extends Controller
      */
     public function edit()
     {
-        // return view('admin.exercises.edit');
+        return view('admin.exercises.edit');
     }
 
     /**

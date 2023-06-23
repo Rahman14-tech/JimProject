@@ -20,10 +20,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <div class="card card-primary">
+                    <div class="card card-warning">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Edit Exercises
                             </h3>
                         </div>
 
@@ -32,8 +32,10 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Name</label>
+                                    <input type="text" class="form-control mb-3" 
+                                        placeholder="Enter current name" name="name">
                                     <input type="text" class="form-control" 
-                                        placeholder="Enter category name" name="name">
+                                        placeholder="Enter new name" name="name">
                                 </div>
 
                                 <div class="form-group">
@@ -42,13 +44,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>URL</label>
+                                    <label>Update URL</label>
                                     <input type="text" class="form-control" 
                                         placeholder="Enter category name" name="name">
                                 </div>
                                 
                                 <div class="mb-3">
-                                  <label for='image' class="form-label">Image</label>
+                                  <label for='image' class="form-label">Update Image</label>
                                   <input type="file" class="form-control" name="image_file" id="image">
                               </div>
 

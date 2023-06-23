@@ -44,7 +44,7 @@ $current_route = request()->route()->getName();
             {{ $current_route == 'dashboard' ? 'active':''}}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Difficulties
+                    Exercises
                 </p>
             </a>
         </li>

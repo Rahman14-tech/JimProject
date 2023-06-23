@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Tools</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -23,7 +23,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Add Tools
                             </h3>
                         </div>
 
@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" 
-                                        placeholder="Enter category name" name="name">
+                                        placeholder="Enter tools name" name="name">
                                 </div>
 
                             </div>

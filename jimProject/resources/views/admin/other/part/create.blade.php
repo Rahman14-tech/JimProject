@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Body Part's</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -29,7 +29,7 @@
 
                         <form method="post" action="#" enctype="multipart/form-data">
                           @csrf
-                            <div class="card-body">
+                            <div class="m-3">
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" 
@@ -37,7 +37,7 @@
                                 </div>
 
                             </div>
-                            <div class="card-body">
+                            <div class="m-3">
                                  <div class="mb-3">
                                   <label for='image' class="form-label">Image</label>
                                   <input type="file" class="form-control" name="image_file" id="image">

@@ -21,6 +21,7 @@ class OtherController extends Controller
     public function create()
     {
         return view('admin.other.type.create');
+        // return view('admin.other.type.edit');
     }
 
     /**
