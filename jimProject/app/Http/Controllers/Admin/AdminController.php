@@ -12,7 +12,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.welcome');
+        return view('admin.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.Add');
     }
 
     /**
@@ -42,9 +42,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+
+        return view('admin.category.edit');
     }
 
     /**
