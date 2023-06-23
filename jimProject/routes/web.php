@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\{AdminController,Admin2Controller};
 use App\Http\Controllers\ExerciseController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -26,11 +26,15 @@ use Illuminate\Support\Facades\Auth;
 //     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
-    Route::get('/home', [AdminController::class, 'index'])->name('admin.home');
-    Route::get('/edit', [AdminController::class, 'edit'])->name('admin.edit');
-    Route::get('/create', [AdminController::class, 'create'])->name('admin.add');
+
+Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
+    Route::get('/home', [AdminController::class,'index'])->name('admin.home');
+    Route::get('/edit', [AdminController::class,'edit'])->name('admin.edit');
+    Route::get('/create', [AdminController::class,'create'])->name('admin.create');
+    Route::resource('/other', Admin2Controller::class);
+
 });
+
 
 //user routing
 Route::get('/', function () {
