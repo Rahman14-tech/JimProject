@@ -48,9 +48,9 @@ $current_route = request()->route()->getName();
                 </p>
             </a>
         </li>
-        
+
         <li class="nav-item">
-            <a href="{{ route('admin.edit') }}" class="nav-link
+            <a href="{{ route('other.index') }}" class="nav-link
             {{ $current_route == 'dashboard' ? 'active':''}}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
