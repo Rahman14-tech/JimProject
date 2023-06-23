@@ -5,22 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OtherController extends Controller
+class diffController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('admin.other');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('admin.other.type.create');
+        return view('admin.other.diff.create');
     }
 
     /**
@@ -44,7 +33,7 @@ class OtherController extends Controller
      */
     public function edit(string $id)
     {
-        // return view('admin.other.type.edit');
+        // return view('admin.other.diff.edit');
     }
 
     /**

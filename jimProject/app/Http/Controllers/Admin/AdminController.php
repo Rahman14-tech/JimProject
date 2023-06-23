@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.AddData.create');
+        return view('admin.exercises.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminController extends Controller
      */
     public function edit()
     {
-        // return view('admin.addData.edit');
+        // return view('admin.exercises.edit');
     }
 
     /**

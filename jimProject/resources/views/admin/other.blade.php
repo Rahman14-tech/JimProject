@@ -13,8 +13,8 @@
               <div class="card-body">
                 <div>
                     <h5 class="card-title mx-3">Type</h5>
-                    <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
-                    <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
+                    <a href="{{ route('other.create') }}" class="btn btn-primary mb-2">Add</a>
+                    <a href="#" class="btn btn-warning mb-2">Edit</a>
                 </div>
                 <table class="table table-hover table-bordered datatables text-center">
                   <thead>
@@ -54,7 +54,7 @@
                 <div class="card-body">
                     <div>
                         <h5 class="card-title mx-3">Tools</h5>
-                        <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
+                        <a href="{{ route('tool.create') }}" class="btn btn-primary mb-2">Add</a>
                         <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
                     </div>
                   <table class="table table-hover table-bordered datatables text-center">
@@ -77,15 +77,15 @@
                     <div class="card-body">
                         <div>
                             <h5 class="card-title mx-3">Difficulties</h5>
-                            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
-                            <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
+                            <a href="{{ route('diff.create') }}" class="btn btn-primary mb-2">Add</a>
+                            <a href="#" class="btn btn-warning mb-2">Edit</a>
                         </div>
                       
                       <table class="table table-hover table-bordered datatables text-center">
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Name</th>
+                            <th>Lavel</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -101,12 +101,12 @@
 
           <div class="row">
 
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <div>
                             <h5 class="card-title mx-3">Part's</h5>
-                            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
+                            <a href="{{ route('part.create') }}" class="btn btn-primary mb-2">Add</a>
                             <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
                         </div>
                       
@@ -125,30 +125,6 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <h5 class="card-title mx-3">Difficulties</h5>
-                                <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
-                                <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
-                            </div>
-                          
-                          <table class="table table-hover table-bordered datatables text-center">
-                            <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Level</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-    
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
             
 
 

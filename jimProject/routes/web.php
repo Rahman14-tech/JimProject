@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{AdminController, OtherController};
+use App\Http\Controllers\Admin\{AdminController, OtherController,diffController,toolController,partController};
 use App\Http\Controllers\ExerciseController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +32,9 @@ Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
     Route::get('/edit', [AdminController::class,'edit'])->name('admin.edit');
     Route::get('/create', [AdminController::class,'create'])->name('admin.create');
     Route::resource('/other', OtherController::class);
+    Route::resource('/diff', diffController::class);
+    Route::resource('/part', partController::class);
+    Route::resource('/tool', toolController::class);
 });
 
 
