@@ -13,7 +13,7 @@ class ExerciseController extends Controller
      */
     public function index()
     {
-        return view('Exercise.allExercise');
+
     }
 
     /**
@@ -38,7 +38,8 @@ class ExerciseController extends Controller
     public function show(string $id)
     {
         $Datum = Exercise::find($id)::with('type', 'difficulty', 'tool', 'part')->first();
-        return view('Exercise.ExerciseDetail', compact('Datum'));
+        $Instruction = explode('.', $Datum["Instruction"]);
+        return view('Exercise.ExerciseDetail', compact('Datum', 'Instruction'));
     }
 
     /**
