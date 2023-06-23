@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Difficulties</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -23,7 +23,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Add Level
                             </h3>
                         </div>
 

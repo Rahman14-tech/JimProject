@@ -23,7 +23,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Add Exercises
                             </h3>
                         </div>
 

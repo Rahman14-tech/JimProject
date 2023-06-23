@@ -10,6 +10,7 @@ class toolController extends Controller
     public function create()
     {
         return view('admin.other.tool.create');
+        // return view('admin.other.tool.edit');
     }
 
     /**
@@ -31,9 +32,9 @@ class toolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        return view('admin.other.tool.edit');
     }
 
     /**
