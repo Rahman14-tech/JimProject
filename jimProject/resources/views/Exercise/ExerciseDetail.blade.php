@@ -20,6 +20,12 @@
         </div>
         <br>
         <h1 class="whiteText">Instruction</h1>
-        <h3 class="whiteText">{{ $Datum->Instruction }}</h3>
+        <ul class="">
+            @foreach ($Instruction as $ins)
+                @if ($ins != '')
+                    <li class="whiteText">{{ $ins }}</li>
+                @endif
+            @endforeach
+        </ul>
     </div>
 @endsection

@@ -26,8 +26,8 @@ use Illuminate\Support\Facades\Auth;
 //     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // });
 
-Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
-    Route::get('/home', [AdminController::class,'index'])->name('admin.home');
+Route::group(['prefix' => 'admin', 'middleware' => 'adminauth'], function () {
+    Route::get('/home', [AdminController::class, 'index'])->name('admin.home');
 });
 
 //user routing
@@ -40,5 +40,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('Exercise', ExerciseController::class);
+
+Route::get('/AllExercises/{type}', [App\Http\Controllers\HomeController::class, 'AllExercises'])->name('AllExercises');
 
 Route::get('/selection', [App\Http\Controllers\HomeController::class, 'selection'])->name('selection');
