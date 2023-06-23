@@ -37,7 +37,8 @@ class ExerciseController extends Controller
      */
     public function show(string $id)
     {
-        $Datum = Exercise::find($id)::with('type', 'difficulty', 'tool', 'part')->first();
+        $intID = intval($id);
+        $Datum = Exercise::findOrFail($intID);
         $Instruction = explode('.', $Datum["Instruction"]);
         return view('Exercise.ExerciseDetail', compact('Datum', 'Instruction'));
     }

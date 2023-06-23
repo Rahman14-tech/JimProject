@@ -52,20 +52,22 @@
         <section class="categories row m-5">
             @foreach ($Datum as $D)
                 <div class="col-md-4 mb-3 mb-lg-0">
-                    <div class="hover hover-1 text-white rounded"><img src="{{ asset('storage') }}/{{ $D->ThumbnailImage }}"
-                            alt="">
-                        <div class="hover-overlay"></div>
-                        <div class="hover-1-content px-5">
-                            <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> {{ $D->Name }}</h3>
-                            <p class="hover-1-description font-weight-light mb-0">
-                                Choose your exercise and i'm sure that you can master this exercise in no time with
-                                our
-                                help. The help that we mention provide instruction, related youtube video, and tool
-                                that
-                                needed for the exercise.
-                            </p>
+                    <a href="{{ url('Exercise', $D->id) }}">
+                        <div class="hover hover-1 text-white rounded"><img
+                                src="{{ asset('storage') }}/{{ $D->ThumbnailImage }}" alt="">
+                            <div class="hover-overlay"></div>
+                            <div class="hover-1-content px-5">
+                                <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> {{ $D->Name }}</h3>
+                                <p class="hover-1-description font-weight-light mb-0">
+                                    Choose your exercise and i'm sure that you can master this exercise in no time with
+                                    our
+                                    help. The help that we mention provide instruction, related youtube video, and tool
+                                    that
+                                    needed for the exercise.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </section>

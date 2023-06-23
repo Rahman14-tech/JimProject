@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exercise;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +31,12 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->respondWithToken($token);
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            //'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth('api')->factory()->getTTL() * 60
+        ]);
     }
 
     /**
@@ -79,5 +85,15 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
+    }
+
+    public function AllExercises()
+    {
+        $Datum = Exercise::All()::with('type', 'difficulty', 'tool', 'part')->get();
+        $Data = array();
+        foreach ($Datum as $D) {
+            array_push($Data, array("Name" => $D->Name, "Type" => $D->Type, "Part" => $D->Part, "Tool" => $D->Tool, "Difficulty" => $D->Difficulty, "Instruction" => $D->Instruction, "VideoUrl" => $D->VideoUrl, "ThumbnailImage" => $D->ThumbnailImage));
+        }
+        return response()->json($Data);
     }
 }
