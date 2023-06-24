@@ -40,7 +40,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.exercises.create');
+        // return view('admin.exercises.create');
     }
 
     /**

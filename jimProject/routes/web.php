@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\{AdminController, typeController,diffController,toolController,partController};
-use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\Admin\{AdminController, typeController,diffController, exerciseController, toolController,partController};
+use App\Models\Exercise;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,14 +29,15 @@ use Illuminate\Support\Facades\Auth;
 
 Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
     Route::get('/home', [AdminController::class,'index'])->name('admin.home');
-    Route::get('/edit', [AdminController::class,'edit'])->name('admin.edit');
-    Route::get('/create', [AdminController::class,'create'])->name('admin.create');
+    // Route::get('/edit', [AdminController::class,'edit'])->name('admin.edit');
+    // Route::get('/create', [AdminController::class,'create'])->name('admin.create');
     Route::get('/other', [AdminController::class,'otherindex'])->name('admin.other');
     Route::resource('/type', typeController::class);
     Route::resource('diff', diffController::class);
     Route::post('diff/check-duplicate', [diffController::class, 'checkDuplicate'])->name('diff.checkDuplicate');    
     Route::resource('/part', partController::class);
     Route::resource('/tool', toolController::class);
+    Route::resource('/exercise', exerciseController::class);
 });
 
 

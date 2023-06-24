@@ -13,9 +13,7 @@ class typeController extends Controller
      */
     public function create()
     {
-        $data = Type::all();
-
-        return view('admin.other.type.create', compact('data'));
+        return view('admin.other.type.create');
     }
 
     /**
@@ -26,6 +24,14 @@ class typeController extends Controller
         $request->validate([
             'Name' => 'required',
         ]);
+
+        $alldata = Type::all();
+
+        foreach($alldata as $data){
+            if(strtoupper($request->Name) == strtoupper($data->Name));
+
+            return redirect('/');
+        }
 
         $newType = new Type();
         $newType->Name = $request->Name;

@@ -17,8 +17,7 @@
                   content.
                 </p>
 
-                <a href="{{ route('admin.create') }}" class="btn btn-primary mb-2">Add</a>
-                <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a>
+                <a href="{{ route('exercise.create') }}" class="btn btn-primary mb-2">Add</a>
                 <table class="table table-hover table-bordered datatables text-center">
                   <thead>
                     <tr>
@@ -45,16 +44,16 @@
                         <td>{{ $item->difficulty->Level }}</td>
                         <td>{{ $item->Instruction }}</td>
                         <td>{{ $item->VideoUrl }}</td>
-                        <td><img src="{{ asset($item->ThumbnailImage) }}" alt=""></td>
-                        {{-- <td>
-                            <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                        <td><img src="{{ $item->ThumbnailImage }}" alt="" width="200"></td>
+                        <td>
+                            <a href="{{ route('exercise.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>

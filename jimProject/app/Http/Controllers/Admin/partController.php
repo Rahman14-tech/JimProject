@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Part;
+use Illuminate\Support\Facades\File;
 
 class partController extends Controller
 {
     public function create()
     {
-        $data = Part::all();
-
-        return view('admin.other.part.create', compact('data'));
+        return view('admin.other.part.create');
     }
 
     /**
@@ -24,6 +23,14 @@ class partController extends Controller
             'Name' => 'required',
             'image_url' => 'required|image',
         ]);
+
+        $alldata = Part::all();
+
+        foreach($alldata as $data){
+            if(strtoupper($request->Name) == strtoupper($data->Name));
+
+            return redirect('/');
+        }
 
         $imagePath = $request->file('image_url')->store('img/part_image', ['disk' => 'public']);
 
@@ -48,7 +55,9 @@ class partController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Part::findOrFail($id);
+
+        return view('admin.other.part.edit', compact('data'));
     }
 
     /**
@@ -56,7 +65,24 @@ class partController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+            'image_url' => 'required|image',
+        ]);
+
+        $editPart = Part::findOrFail($id);
+        $editPart->Name = $request->Name;
+        if ($request->hasFile('image_url')) {
+            // delete old image
+            File::delete($editPart->image_url);
+
+            // and store new image
+            $imagePath = $request->file('image_url')->store('img/part_image', ['disk' => 'public']);
+            $editPart->image_url = '/storage/' . $imagePath;
+        }
+        $editPart->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**
