@@ -122,7 +122,7 @@ class exerciseController extends Controller
             // 'Tool' => 'required',
             // 'Difficulty' => 'required',
             'Instruction' => 'required',
-            'VideoURL' => 'required',
+            'VideoUrl' => 'required',
         ]);
 
         // $imagePath = $request->file('image_url')->store('img/exercises_thumbnail', ['disk' => 'public']);
@@ -136,7 +136,7 @@ class exerciseController extends Controller
         $editExercise->Instruction = $request->Instruction;
         $editExercise->VideoUrl = $request->VideoUrl;
 
-        $video_id = explode("?v=", $request->VideoURL);
+        $video_id = explode("?v=", $request->VideoUrl);
         $video_id = $video_id[1];
         $Thumbnail_url="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
 
