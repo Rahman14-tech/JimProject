@@ -71,8 +71,8 @@
                                     <label for="diff-select">Difficulty</label>
                                     <select name="Difficulty" id="diff-select">
                                         <option value="">--Please choose a difficulty--</option>
-                                        @foreach ($typedata as $item)
-                                            <option value="{{ $item->id }}">{{ $item->Name }}</option>
+                                        @foreach ($diffdata as $item)
+                                            <option value="{{ $item->id }}">{{ $item->Level }}</option>
                                         @endforeach
                                     </select>
                                 </div>
