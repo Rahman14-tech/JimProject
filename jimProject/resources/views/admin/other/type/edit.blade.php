@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Type</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -19,29 +19,30 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Edit Type
                             </h3>
                         </div>
 
-                        <form method="post" action="#" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('type.update', $data->id) }}" enctype="multipart/form-data">
                           @csrf
+                          @method('put')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" 
-                                        placeholder="Enter category name" name="name">
+                                    <input type="text" class="form-control"
+                                         name="Name" value="{{ $data->Name }}">
                                 </div>
 
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
 
-                                <a href="{{ route('other.index') }}" class="btn btn-danger ml-2">Back</a>
+                                <a href="{{ route('admin.other') }}" class="btn btn-danger ml-2">Back</a>
                             </div>
                         </form>
                     </div>

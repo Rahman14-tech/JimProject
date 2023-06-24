@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Tool;
 
 class toolController extends Controller
 {
@@ -17,7 +18,24 @@ class toolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+        ]);
+
+        $alldata = Tool::all();
+
+        foreach($alldata as $data){
+            if(strtoupper($request->Name) == strtoupper($data->Name)){
+                return redirect()->route('admin.other');
+            };
+
+        }
+
+        $newTool = new Tool();
+        $newTool->Name = $request->Name;
+        $newTool->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**
@@ -31,9 +49,11 @@ class toolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request, string $id)
     {
-        //
+        $data = Tool::findOrFail($id);
+
+        return view('admin.other.tool.edit', compact('data'));
     }
 
     /**
@@ -41,7 +61,16 @@ class toolController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+        ]);
+
+
+        $editTool = Tool::findOrFail($id);
+        $editTool->Name = $request->Name;
+        $editTool->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**

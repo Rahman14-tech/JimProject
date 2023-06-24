@@ -19,38 +19,78 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Add Exercise
                             </h3>
                         </div>
 
-                        <form method="post" action="#" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('exercise.store') }}" enctype="multipart/form-data">
                           @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" 
-                                        placeholder="Enter category name" name="name">
+                                    <input type="text" class="form-control"
+                                        placeholder="Enter exercise name" name="Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="type-select">Type</label>
+                                    <select name="Type" id="type-select">
+                                        <option value="">--Please choose a type--</option>
+                                        @foreach ($typedata as $item)
+                                            <option value="{{ $item->id }}">{{ $item->Name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="part-select">Part</label>
+                                    <select name="Part" id="part-select">
+                                        <option value="">--Please choose body part--</option>
+                                        @foreach ($partdata as $item)
+                                            <option value="{{ $item->id }}">{{ $item->Name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tool-select">Tool</label>
+                                    <select name="Tool" id="tool-select">
+                                        <option value="">--Please choose a tool--</option>
+                                        @foreach ($tooldata as $item)
+                                            <option value="{{ $item->id }}">{{ $item->Name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="diff-select">Difficulty</label>
+                                    <select name="Difficulty" id="diff-select">
+                                        <option value="">--Please choose a difficulty--</option>
+                                        @foreach ($diffdata as $item)
+                                            <option value="{{ $item->id }}">{{ $item->Level }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
                                   <label class="form-label" for="form6Example7">Instruction</label>
-                                  <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                                  <textarea class="form-control" id="form6Example7" rows="4" name="Instruction"></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label>URL</label>
-                                    <input type="text" class="form-control" 
-                                        placeholder="Enter category name" name="name">
+                                    <input type="text" class="form-control"
+                                        placeholder="Enter video URL" name="VideoUrl">
                                 </div>
-                                
-                                <div class="mb-3">
+
+                                {{-- <div class="mb-3">
                                   <label for='image' class="form-label">Image</label>
                                   <input type="file" class="form-control" name="image_file" id="image">
-                              </div>
+                              </div> --}}
 
                             </div>
 

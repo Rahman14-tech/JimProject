@@ -26,7 +26,7 @@
 
 <body class="tubuhHitam">
     <div id="app">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid p-3 mx-3">
                 <a class="navbar-brand" href="#"><b>GYMSKUY</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,6 +50,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if (auth()->user()->isAdmin == 1)
+                                    <a href="{{ route('admin.home') }}" class="dropdown-item" style="color:black">
+                                        Admin
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('login') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"
