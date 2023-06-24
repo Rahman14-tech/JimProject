@@ -27,13 +27,13 @@
                             </h3>
                         </div>
 
-                        <form method="post" action="{{ route('diff.store') }}" enctype="multipart/form-data">
+                        <form id="myForm" method="post" action="{{ route('diff.store') }}" enctype="multipart/form-data">
                           @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Level</label>
                                     <input type="text" class="form-control"
-                                        placeholder="Enter difficulty level" name="Level">
+                                        placeholder="Enter difficulty level" name="Level" pattern="[A-Z].*" title="Input must start with an uppercase letter" required>
                                 </div>
 
                             </div>
@@ -43,6 +43,7 @@
 
                                 <a href="{{ route('admin.other') }}" class="btn btn-danger ml-2">Back</a>
                             </div>
+                            <span id="errorMessage" style="color: red;"></span>
                         </form>
                     </div>
                 </div>
