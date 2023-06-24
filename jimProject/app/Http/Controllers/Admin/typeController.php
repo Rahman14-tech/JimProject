@@ -81,6 +81,9 @@ class typeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleteType = Type::findOrFail($id);
+        $deleteType->delete();
+
+        return redirect()->route('admin.other');
     }
 }

@@ -91,6 +91,9 @@ class partController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deletePart = Part::findOrFail($id);
+        $deletePart->delete();
+
+        return redirect()->route('admin.other');
     }
 }

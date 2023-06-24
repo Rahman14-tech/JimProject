@@ -88,6 +88,9 @@ class diffController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleteDifficulty = Difficulty::findOrFail($id);
+        $deleteDifficulty->delete();
+
+        return redirect()->route('admin.other');
     }
 }

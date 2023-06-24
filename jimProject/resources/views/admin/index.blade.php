@@ -48,11 +48,11 @@
                         <td>
                             <a href="{{ route('exercise.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
-                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
+                           <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('exercise.destroy', $item->id) }}" method="post">
+                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-exercise-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach

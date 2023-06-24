@@ -32,11 +32,11 @@
                         <td>
                             <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -70,11 +70,11 @@
                         <td>
                             <a href="{{ route('tool.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            {{-- <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
-                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
+                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('tool.destroy', $item->id) }}" method="post">
+                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-tool-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -109,11 +109,11 @@
                         <td>
                             <a href="{{ route('diff.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                          {{--   <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
-                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
+                          <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('diff.destroy', $item->id) }}" method="post">
+                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-diff-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -154,11 +154,11 @@
                         <td>
                             <a href="{{ route('part.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
-                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
+                           <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('part.destroy', $item->id) }}" method="post">
+                              <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-part-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach

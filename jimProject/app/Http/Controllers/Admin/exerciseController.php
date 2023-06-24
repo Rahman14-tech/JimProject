@@ -155,6 +155,9 @@ class exerciseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleteExercise = Exercise::findOrFail($id);
+        $deleteExercise->delete();
+
+        return redirect()->route('admin.home');
     }
 }

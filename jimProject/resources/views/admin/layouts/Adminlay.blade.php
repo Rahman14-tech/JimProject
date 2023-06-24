@@ -160,6 +160,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function showDeleteConfirmation(formId) {
+            if (confirm('Are You Sure Want To Delete?')) {
+                document.getElementById(formId).submit();
+            }
+        }
+    </script>
     @yield('footer-scripts')
 
 </body>
