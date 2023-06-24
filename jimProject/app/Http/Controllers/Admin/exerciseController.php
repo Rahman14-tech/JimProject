@@ -54,9 +54,11 @@ class exerciseController extends Controller
         $alldata = Exercise::all();
 
         foreach($alldata as $data){
-            if(strtoupper($request->Name) == strtoupper($data->Name) && strtoupper($request->VideoUrl) == strtoupper($data->VideoUrl));
+            if(strtoupper($request->Name) == strtoupper($data->Name) && strtoupper($request->VideoUrl) == strtoupper($data->VideoUrl)){
 
-            return redirect('/');
+                return redirect('/');
+            };
+
         }
 
         // $imagePath = $request->file('image_url')->store('img/exercises_thumbnail', ['disk' => 'public']);

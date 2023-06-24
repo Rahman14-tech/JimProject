@@ -28,9 +28,10 @@ class typeController extends Controller
         $alldata = Type::all();
 
         foreach($alldata as $data){
-            if(strtoupper($request->Name) == strtoupper($data->Name));
+            if(strtoupper($request->Name) == strtoupper($data->Name)){
+                return redirect('/');
+            };
 
-            return redirect('/');
         }
 
         $newType = new Type();

@@ -34,9 +34,11 @@ class diffController extends Controller
         $alldata = Difficulty::all();
 
         foreach($alldata as $data){
-            if(strtoupper($request->Level) == strtoupper($data->Level));
+            if(strtoupper($request->Level) == strtoupper($data->Level)){
+                return redirect('/');
 
-            return redirect('/');
+            };
+
         }
 
         $newDiff = new Difficulty();

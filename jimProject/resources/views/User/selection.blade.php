@@ -69,7 +69,7 @@
             @foreach ($Parts as $p)
                 <div class="col-md-4 mb-3 mb-lg-10">
                     <a href="{{ url('AllExercises', $p->Name) }}">
-                        <div class="hover hover-1 text-white rounded"><img src="{{ asset('storage') }}/{{ $p->image_url }}"
+                        <div class="hover hover-1 text-white rounded"><img src="{{ $p->image_url }}"
                                 alt="">
                             <div class="hover-overlay"></div>
                             <div class="hover-1-content px-5">

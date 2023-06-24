@@ -10,7 +10,7 @@
                         <a href="{{ url('Exercise', $d->id) }}">
                             <div class="col-md-4 mb-3 mb-lg-0">
                                 <div class="hover hover-1 text-white rounded"><img
-                                        src="{{ asset('storage') }}/{{ $d->ThumbnailImage }}" alt="">
+                                        src="{{ $d->ThumbnailImage }}" alt="">
                                     <div class="hover-overlay"></div>
                                     <div class="hover-1-content px-5">
                                         <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span

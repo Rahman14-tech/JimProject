@@ -27,9 +27,10 @@ class partController extends Controller
         $alldata = Part::all();
 
         foreach($alldata as $data){
-            if(strtoupper($request->Name) == strtoupper($data->Name));
+            if(strtoupper($request->Name) == strtoupper($data->Name)){
 
-            return redirect('/');
+                return redirect('/');
+            };
         }
 
         $imagePath = $request->file('image_url')->store('img/part_image', ['disk' => 'public']);
