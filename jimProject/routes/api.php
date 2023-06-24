@@ -25,6 +25,5 @@ Route::group([
     Route::post('logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
     Route::post('me', 'App\Http\Controllers\AuthController@me');
-    Route::get('AllExercises', 'App\Http\Controllers\AuthController@AllExercises');
-
+    Route::get('/AllExercises', 'App\Http\Controllers\AuthController@AllExercises');
 });

@@ -7,8 +7,8 @@
             @if ($DifficultiesID != null)
                 @foreach ($Datum as $d)
                     @if ($DifficultiesID == $d->Difficulty)
-                        <a href="{{ url('Exercise', $d->id) }}">
-                            <div class="col-md-4 mb-3 mb-lg-0">
+                        <div class="col-md-4 mb-3 mb-lg-0">
+                            <a href="{{ url('Exercise', $d->id) }}">
                                 <div class="hover hover-1 text-white rounded"><img
                                         src="{{ asset('storage') }}/{{ $d->ThumbnailImage }}" alt="">
                                     <div class="hover-overlay"></div>
@@ -26,8 +26,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     @endif
                 @endforeach
             @else
