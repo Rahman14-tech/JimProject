@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Difficulty;
+use SebastianBergmann\Diff\Diff;
 
 class diffController extends Controller
 {
     public function create()
     {
-        return view('admin.other.diff.create');
+        $data = Difficulty::all();
+
+        return view('admin.other.diff.create', compact('data'));
     }
 
     /**
@@ -17,7 +21,15 @@ class diffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Level' => 'required',
+        ]);
+
+        $newDiff = new Difficulty();
+        $newDiff->Level = $request->Level;
+        $newDiff->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**
@@ -33,7 +45,9 @@ class diffController extends Controller
      */
     public function edit(string $id)
     {
-        // return view('admin.other.diff.edit');
+        $data = Difficulty::findOrFail($id);
+
+        return view('admin.other.diff.edit', compact('data'));
     }
 
     /**
@@ -41,7 +55,16 @@ class diffController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'Level' => 'required',
+        ]);
+
+
+        $editType = Difficulty::findOrFail($id);
+        $editType->Level = $request->Level;
+        $editType->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**

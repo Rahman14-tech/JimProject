@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Difficulty</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -23,17 +23,17 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
-                              Add Category
+                              Add Difficulty
                             </h3>
                         </div>
 
-                        <form method="post" action="#" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('diff.store') }}" enctype="multipart/form-data">
                           @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Level</label>
                                     <input type="text" class="form-control"
-                                        placeholder="Enter category name" name="name">
+                                        placeholder="Enter difficulty level" name="Level">
                                 </div>
 
                             </div>

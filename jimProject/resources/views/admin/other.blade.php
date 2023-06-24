@@ -15,13 +15,13 @@
                 <div>
                     <h5 class="card-title mx-3">Type</h5>
                     <a href="{{ route('type.create') }}" class="btn btn-primary mb-2">Add</a>
-                    <a href="#" class="btn btn-warning mb-2">Edit</a>
                 </div>
                 <table class="table table-hover table-bordered datatables text-center">
                   <thead>
                     <tr>
                       <th>No</th>
                       <th>Name</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -29,15 +29,15 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->Name }}</td>
-                        {{-- <td>
+                        <td>
                             <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -53,13 +53,13 @@
                     <div>
                         <h5 class="card-title mx-3">Tools</h5>
                         <a href="{{ route('tool.create') }}" class="btn btn-primary mb-2">Add</a>
-                        {{-- <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a> --}}
                     </div>
                   <table class="table table-hover table-bordered datatables text-center">
                     <thead>
                       <tr>
                         <th>No</th>
                         <th>Name</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -67,15 +67,15 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->Name }}</td>
-                        {{-- <td>
-                            <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                        <td>
+                            <a href="{{ route('tool.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                            {{-- <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -91,7 +91,6 @@
                         <div>
                             <h5 class="card-title mx-3">Difficulties</h5>
                             <a href="{{ route('diff.create') }}" class="btn btn-primary mb-2">Add</a>
-                            <a href="#" class="btn btn-warning mb-2">Edit</a>
                         </div>
 
                       <table class="table table-hover table-bordered datatables text-center">
@@ -99,6 +98,7 @@
                           <tr>
                             <th>No</th>
                             <th>Level</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -106,15 +106,15 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->Level }}</td>
-                        {{-- <td>
-                            <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                        <td>
+                            <a href="{{ route('diff.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                          {{--   <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>
                     @endforeach
                         </tbody>
@@ -134,7 +134,6 @@
                         <div>
                             <h5 class="card-title mx-3">Part's</h5>
                             <a href="{{ route('part.create') }}" class="btn btn-primary mb-2">Add</a>
-                            {{-- <a href="{{ route('admin.edit') }}" class="btn btn-warning mb-2">Edit</a> --}}
                         </div>
 
                       <table class="table table-hover table-bordered datatables text-center">
@@ -143,10 +142,11 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Image_URL</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($typedata as $index => $item)
+                            @foreach ($partdata as $index => $item)
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->Name }}</td>

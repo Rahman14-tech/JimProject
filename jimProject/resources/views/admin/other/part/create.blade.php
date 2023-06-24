@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Type & Tools</h1>
+                    <h1 class="m-0">Body Parts</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -27,20 +27,26 @@
                             </h3>
                         </div>
 
-                        <form method="post" action="#" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('part.store') }}" enctype="multipart/form-data">
                           @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control"
-                                        placeholder="Enter category name" name="name">
+                                        placeholder="Enter parts name" name="Name">
                                 </div>
 
                             </div>
                             <div class="card-body">
                                  <div class="mb-3">
                                   <label for='image' class="form-label">Image</label>
-                                  <input type="file" class="form-control" name="image_file" id="image">
+                                  <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image_url">
+                                        <label class="custom-file-label">Choose
+                                            image</label>
+                                    </div>
+                                </div>
                               </div>
 
                             </div>

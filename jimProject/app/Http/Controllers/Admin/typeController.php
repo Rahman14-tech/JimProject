@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Type;
 
 class typeController extends Controller
 {
@@ -12,7 +13,9 @@ class typeController extends Controller
      */
     public function create()
     {
-        return view('admin.other.type.create');
+        $data = Type::all();
+
+        return view('admin.other.type.create', compact('data'));
     }
 
     /**
@@ -20,7 +23,15 @@ class typeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+        ]);
+
+        $newType = new Type();
+        $newType->Name = $request->Name;
+        $newType->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**
@@ -36,7 +47,9 @@ class typeController extends Controller
      */
     public function edit(string $id)
     {
-        // return view('admin.other.type.edit');
+        $data = Type::findOrFail($id);
+
+        return view('admin.other.type.edit', compact('data'));
     }
 
     /**
@@ -44,7 +57,16 @@ class typeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+        ]);
+
+
+        $editType = Type::findOrFail($id);
+        $editType->Name = $request->Name;
+        $editType->save();
+
+        return redirect()->route('admin.other');
     }
 
     /**
