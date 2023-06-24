@@ -5,16 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OtherController extends Controller
+class typeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('admin.other');
-    }
-
     /**
      * Show the form for creating a new resource.
      */

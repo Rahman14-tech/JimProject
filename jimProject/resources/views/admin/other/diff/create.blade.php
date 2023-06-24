@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">
@@ -32,7 +32,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Level</label>
-                                    <input type="text" class="form-control" 
+                                    <input type="text" class="form-control"
                                         placeholder="Enter category name" name="name">
                                 </div>
 
@@ -41,7 +41,7 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
 
-                                <a href="{{ route('other.index') }}" class="btn btn-danger ml-2">Back</a>
+                                <a href="{{ route('admin.other') }}" class="btn btn-danger ml-2">Back</a>
                             </div>
                         </form>
                     </div>

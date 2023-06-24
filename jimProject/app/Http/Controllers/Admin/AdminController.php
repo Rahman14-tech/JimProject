@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Difficulty;
+use App\Models\Exercise;
+use App\Models\Part;
+use App\Models\Tool;
+use App\Models\Type;
 
 class AdminController extends Controller
 {
@@ -12,7 +17,22 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $data = Exercise::with('type', 'tool', 'part', 'difficulty')->get();
+        return view('admin.index', compact('data'));
+    }
+
+    public function otherindex()
+    {
+        $type = Type::all();
+        $tool = Tool::all();
+        $diff = Difficulty::all();
+        $part = Part::all();
+        return view('admin.other', [
+            'typedata' => $type,
+            'tooldata' => $tool,
+            'diffdata' => $diff,
+            'partdata' => $part,
+        ]);
     }
 
     /**

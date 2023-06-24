@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // $this->call(adminSeeder::class);
-        $this->call(difficultySeeder::class);
-        $this->call(exerciseSeeder::class);
-        $this->call(partSeeder::class);
-        $this->call(toolSeeder::class);
-        $this->call(typeSeeder::class);
+        // $this->call(difficultySeeder::class);
+        // $this->call(exerciseSeeder::class);
+        // $this->call(partSeeder::class);
+        // $this->call(toolSeeder::class);
+        // $this->call(typeSeeder::class);
 
     }
 }
