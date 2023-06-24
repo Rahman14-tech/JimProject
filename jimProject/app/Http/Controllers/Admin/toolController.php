@@ -10,9 +10,7 @@ class toolController extends Controller
 {
     public function create()
     {
-        $data = Tool::all();
-
-        return view('admin.other.tool.create', compact('data'));
+        return view('admin.other.tool.create');
     }
 
     /**
@@ -23,6 +21,14 @@ class toolController extends Controller
         $request->validate([
             'Name' => 'required',
         ]);
+
+        $alldata = Tool::all();
+
+        foreach($alldata as $data){
+            if(strtoupper($request->Name) == strtoupper($data->Name));
+
+            return redirect('/');
+        }
 
         $newTool = new Tool();
         $newTool->Name = $request->Name;

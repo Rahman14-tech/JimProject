@@ -11,19 +11,26 @@ class diffController extends Controller
 {
     public function create()
     {
-        $data = Difficulty::all();
-
-        return view('admin.other.diff.create', compact('data'));
+        return view('admin.other.diff.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
         $request->validate([
             'Level' => 'required',
         ]);
+
+        $alldata = Difficulty::all();
+
+        foreach($alldata as $data){
+            if(strtoupper($request->Level) == strtoupper($data->Level));
+
+            return redirect('/');
+        }
 
         $newDiff = new Difficulty();
         $newDiff->Level = $request->Level;

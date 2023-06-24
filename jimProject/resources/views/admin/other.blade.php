@@ -151,15 +151,15 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $item->Name }}</td>
                         <td><img src="{{ asset($item->image_url) }}" alt="" width="200"></td>
-                        {{-- <td>
-                            <a href="{{ route('type.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                        <td>
+                            <a href="{{ route('part.edit', $item->id) }}" class="btn btn-warning btn-sm">
                                 Edit </a>
-                            <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
+                           {{--  <form class="m-3" id="delete-category-{{ $item->id }}" action="{{ route('type.destroy', $item->id) }}" method="post">
                               <button class="btn btn-danger btn-sm" onclick="showDeleteConfirmation('delete-type-{{ $item->id }}')">Delete</button>
                               @csrf
                               @method('delete')
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>
                     @endforeach
                         </tbody>
