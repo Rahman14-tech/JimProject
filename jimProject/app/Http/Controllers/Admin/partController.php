@@ -29,7 +29,7 @@ class partController extends Controller
         foreach($alldata as $data){
             if(strtoupper($request->Name) == strtoupper($data->Name)){
 
-                return redirect('/');
+                return redirect()->route('admin.other');
             };
         }
 

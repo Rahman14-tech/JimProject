@@ -56,7 +56,7 @@ class exerciseController extends Controller
         foreach($alldata as $data){
             if(strtoupper($request->Name) == strtoupper($data->Name) && strtoupper($request->VideoUrl) == strtoupper($data->VideoUrl)){
 
-                return redirect('/');
+                return redirect()->route('admin.home');
             };
 
         }

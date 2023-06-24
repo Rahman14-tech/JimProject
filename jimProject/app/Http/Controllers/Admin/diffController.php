@@ -14,7 +14,7 @@ class diffController extends Controller
         $input = $request->input('input');
         $duplicate = Difficulty::where('Level', $input)->exists();
         return response()->json(['duplicate' => $duplicate]);
-    }    
+    }
 
     public function create()
     {
@@ -35,7 +35,7 @@ class diffController extends Controller
 
         foreach($alldata as $data){
             if(strtoupper($request->Level) == strtoupper($data->Level)){
-                return redirect('/');
+                return redirect()->route('admin.other');
 
             };
 
