@@ -33,7 +33,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function(){
     Route::get('/create', [AdminController::class,'create'])->name('admin.create');
     Route::get('/other', [AdminController::class,'otherindex'])->name('admin.other');
     Route::resource('/type', typeController::class);
-    Route::resource('/diff', diffController::class);
+    Route::resource('diff', diffController::class);
+    Route::post('diff/check-duplicate', [diffController::class, 'checkDuplicate'])->name('diff.checkDuplicate');    
     Route::resource('/part', partController::class);
     Route::resource('/tool', toolController::class);
 });
