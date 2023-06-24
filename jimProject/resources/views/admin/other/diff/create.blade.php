@@ -32,14 +32,14 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Level</label>
-                                    <input type="text" class="form-control"
-                                        placeholder="Enter difficulty level" name="Level" pattern="[A-Z].*" title="Input must start with an uppercase letter" required>
+                                    <input type="text" class="form-control" placeholder="Enter difficulty level" name="Level" id="Level" required>
                                 </div>
+                                
 
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
 
                                 <a href="{{ route('admin.other') }}" class="btn btn-danger ml-2">Back</a>
                             </div>
@@ -54,4 +54,38 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@endsection
+
+@section('footer-scripts')
+<script>
+   const form = document.getElementById('myForm');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const input = document.getElementById('Level').value;
+
+  // Check for duplicate value
+  const response = await fetch('{{ route('diff.checkDuplicate') }}', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-TOKEN': '{{ csrf_token() }}',
+    },
+    body: JSON.stringify({ input }),
+  });
+
+  const data = await response.json();
+
+  if (data.duplicate) {
+    // Display alert for duplicate value
+    alert('Error: Input value already exists.');
+  } else {
+    // Continue with form submission
+    form.submit();
+  }
+});
+
+
+</script>
 @endsection

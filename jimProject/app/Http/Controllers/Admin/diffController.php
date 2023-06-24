@@ -9,6 +9,13 @@ use SebastianBergmann\Diff\Diff;
 
 class diffController extends Controller
 {
+    public function checkDuplicate(Request $request)
+    {
+        $input = $request->input('input');
+        $duplicate = Difficulty::where('Level', $input)->exists();
+        return response()->json(['duplicate' => $duplicate]);
+    }    
+
     public function create()
     {
         return view('admin.other.diff.create');

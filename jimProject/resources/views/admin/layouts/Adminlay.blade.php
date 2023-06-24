@@ -53,15 +53,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                {{-- <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Dashboard</a>
-                </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Users</a>
+                    <a href="{{ route('home') }}" class="nav-link">Back</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Portofolios</a>
-                </li> --}}
             </ul>
 
             <!-- Right navbar links -->
@@ -166,7 +160,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    @yield('footer-scripts')
 
 </body>
 
