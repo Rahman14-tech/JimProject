@@ -3,12 +3,12 @@
 @section('content')
     <div class="tubuhHitam">
         <h1 style="text-align: center;margin-top:4rem;margin-bottom:2rem;" class="whiteText">Choose your exercises</h1>
-        <section class="categories row m-5">
+        <div class="categories row m-5">
             @if ($DifficultiesID != null)
                 @foreach ($Datum as $d)
                     @if ($DifficultiesID == $d->Difficulty)
+                    <div class="col-md-4 mb-3 mb-lg-0">
                         <a href="{{ url('Exercise', $d->id) }}">
-                            <div class="col-md-4 mb-3 mb-lg-0">
                                 <div class="hover hover-1 text-white rounded"><img
                                         src="{{ $d->ThumbnailImage }}" alt="">
                                     <div class="hover-overlay"></div>
@@ -26,17 +26,17 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     @endif
                 @endforeach
             @else
                 @foreach ($Datum as $d)
                     @if ($PartsID == $d->Part)
+                    <div class="col-md-4 mb-3 mb-lg-0">
                         <a href="{{ url('Exercise', $d->id) }}">
-                            <div class="col-md-4 mb-3 mb-lg-0">
                                 <div class="hover hover-1 text-white rounded"><img
-                                        src="{{ asset('storage') }}/{{ $d->ThumbnailImage }}" alt="">
+                                        src="{{ $d->ThumbnailImage }}" alt="">
                                     <div class="hover-overlay"></div>
                                     <div class="hover-1-content px-5">
                                         <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> <span
@@ -52,11 +52,11 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     @endif
                 @endforeach
             @endif
     </div>
-    </section>
+    </div>
 @endsection
