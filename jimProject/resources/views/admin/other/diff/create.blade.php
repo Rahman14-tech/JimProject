@@ -34,7 +34,7 @@
                                     <label>Level</label>
                                     <input type="text" class="form-control" placeholder="Enter difficulty level" name="Level" id="Level" required>
                                 </div>
-                                
+
 
                             </div>
 
