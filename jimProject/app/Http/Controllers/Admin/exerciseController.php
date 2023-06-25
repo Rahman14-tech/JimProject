@@ -53,11 +53,12 @@ class exerciseController extends Controller
 
         $alldata = Exercise::all();
 
-        foreach($alldata as $data){
-            if(strtoupper($request->Name) == strtoupper($data->Name) && strtoupper($request->VideoUrl) == strtoupper($data->VideoUrl)){
+        foreach ($alldata as $data) {
+            if (strtoupper($request->Name) == strtoupper($data->Name) && strtoupper($request->VideoUrl) == strtoupper($data->VideoUrl)) {
 
                 return redirect()->route('admin.home');
-            };
+            }
+            ;
 
         }
 
@@ -70,11 +71,11 @@ class exerciseController extends Controller
         $newExercise->Tool = $request->Tool;
         $newExercise->Difficulty = $request->Difficulty;
         $newExercise->Instruction = $request->Instruction;
-        $newExercise->VideoUrl = $request->VideoUrl;
 
         $video_id = explode("?v=", $request->VideoUrl);
         $video_id = $video_id[1];
-        $Thumbnail_url="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
+        $newExercise->VideoUrl = $video_id;
+        $Thumbnail_url = "http://img.youtube.com/vi/" . $video_id . "/maxresdefault.jpg";
 
         $newExercise->ThumbnailImage = $Thumbnail_url;
 
@@ -140,7 +141,7 @@ class exerciseController extends Controller
 
         $video_id = explode("?v=", $request->VideoUrl);
         $video_id = $video_id[1];
-        $Thumbnail_url="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
+        $Thumbnail_url = "http://img.youtube.com/vi/" . $video_id . "/maxresdefault.jpg";
 
         $editExercise->ThumbnailImage = $Thumbnail_url;
 

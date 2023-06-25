@@ -53,8 +53,7 @@
             @foreach ($Datum as $D)
                 <div class="col-md-4 mb-3 mb-lg-0">
                     <a href="{{ url('Exercise', $D->id) }}">
-                        <div class="hover hover-1 text-white rounded"><img
-                                src="{{ asset('storage') }}/{{ $D->ThumbnailImage }}" alt="">
+                        <div class="hover hover-1 text-white rounded"><img src="{{ $D->ThumbnailImage }}" alt="">
                             <div class="hover-overlay"></div>
                             <div class="hover-1-content px-5">
                                 <h3 class="hover-1-title text-uppercase font-weight-bold mb-2"> {{ $D->Name }}</h3>
