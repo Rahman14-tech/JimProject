@@ -20,22 +20,22 @@
                 <div class="carousel-item c-item active" data-bs-interval="10000">
                     <img src="{{ asset('img/gym4.jpg') }}" class="d-block w-100 c-img" alt="...">
                     <div class="carousel-caption top-50 mb-5">
-                        <h5>ACU CUKA K4M0E</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5>Learn</h5>
+                        <p>Learn some exercises from beginner to expert level.</p>
                     </div>
                 </div>
                 <div class="carousel-item c-item" data-bs-interval="2000">
                     <img src="{{ asset('img/gym5.jpg') }}" class="d-block w-100 c-img" alt="...">
                     <div class="carousel-caption top-50 ">
-                        <h5>ACU RINDYU KAMOE</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5>Adapt</h5>
+                        <p>Make your body adapts to the pain that you received from your exercise.</p>
                     </div>
                 </div>
                 <div class="carousel-item c-item">
                     <img src="{{ asset('img/gym6.jpg') }}" class="d-block w-100 c-img" alt="...">
                     <div class="carousel-caption top-50 ">
-                        <h5>ATU CAYANG K4M0E</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5>Teach/Share</h5>
+                        <p>Teach or share your knowledge to the others with respectfull.</p>
                     </div>
                 </div>
             </div>
