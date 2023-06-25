@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="tubuhHitam container">
-        <div class="contentExercise">
+        <div class="">
             <div class="row">
                 <div class="col">
                     <iframe src="https://www.youtube.com/embed/{{ $Datum->VideoUrl }}"id="the_vid"

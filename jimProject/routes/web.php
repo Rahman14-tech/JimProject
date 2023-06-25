@@ -50,7 +50,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('Exercise', ExerciseController::class);
+Route::resource('Exercise', \App\Http\Controllers\ExerciseController::class);
 
 Route::get('/AllExercises/{type}', [App\Http\Controllers\HomeController::class, 'AllExercises'])->name('AllExercises');
 

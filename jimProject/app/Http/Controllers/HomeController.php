@@ -27,12 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $DatumSizeProto = Exercise::with('type', 'difficulty', 'tool', 'part')->get();
+        $DatumSizeProto = Exercise::all();
         $DatumSize = count($DatumSizeProto);
         if ($DatumSize < 3) {
-            $randomDatum = Exercise::with('type', 'difficulty', 'tool', 'part')->get()->random($DatumSize)->values();
+            $randomDatum = Exercise::all()->random($DatumSize)->values();
         } else {
-            $randomDatum = Exercise::with('type', 'difficulty', 'tool', 'part')->get()->random(3)->values();
+            $randomDatum = Exercise::all()->random(3)->values();
         }
         return view('User.home', [
             'Datum' => $randomDatum,
@@ -49,18 +49,15 @@ class HomeController extends Controller
     {
         $allParts = DB::table('parts')->where('Name', $type)->first();
         $allDifficulties = DB::table('difficulties')->where('Level', $type)->first();
-        if ($allParts == null && $allDifficulties == null) {
-
-        }
         if ($allDifficulties != null) {
-            $Datum = Exercise::with('type', 'difficulty', 'tool', 'part')->get();
+            $Datum = Exercise::all();
             return view('Exercise.allExercise', [
                 'Datum' => $Datum,
                 'DifficultiesID' => (int) $allDifficulties->id,
                 'PartsID' => null,
             ]);
         }
-        $Datum = Exercise::with('type', 'difficulty', 'tool', 'part')->get();
+        $Datum = Exercise::all();
         return view('Exercise.allExercise', [
             'Datum' => $Datum,
             'PartsID' => (int) $allParts->id,
